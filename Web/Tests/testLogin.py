@@ -75,3 +75,14 @@ class TestLogin(Base):
         self.driver.implicitly_wait(10)
         login.validation(LoginLocators.pass_txtbox_name,"Please fill out this field.")
 
+
+    def test_daniel(self):
+        driver = self.driver
+        login = LoginPage(driver)
+        driver.find_element_by_xpath(LoginLocators.login_page_xpath).click()
+        login.enter_email("dj@mac.com")
+        login.enter_password('123456')
+        login.click_login()
+        self.driver.implicitly_wait(10)
+        login.validation(LoginLocators.pass_txtbox_name,"Please fill out this field.")
+
