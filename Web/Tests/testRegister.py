@@ -35,7 +35,7 @@ class TestRegister(Base):
             assert False
             #allure.attach( self.driver.get_screenshot_as_png(),name= 'screenshot', attachment_type=AttachmentType.PNG)
 
-    # @pytest.mark.skip
+    @pytest.mark.regression
     def test_register_user_null(self):
         driver = self.driver
         reg = RegisterPage(driver)
@@ -52,7 +52,7 @@ class TestRegister(Base):
         self.driver.implicitly_wait(10)
         reg.validation(RegisterLocators.user_name_txtbox,"Please fill out this fiel.")
 
-    @pytest.mark.skip
+    @pytest.mark.regression
     def test_register_lastname_null(self):
         driver = self.driver
         reg = RegisterPage(driver)

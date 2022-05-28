@@ -1,8 +1,10 @@
+import pytest
 import requests
 
 
 class TestSerch():
 
+    @pytest.mark.sanity
     def test_api_login(self):
         url = "https://wetechsocial.herokuapp.com/auth/login"
         myobj = {"email":"dj@mac.com","password":"123456"}
@@ -10,6 +12,7 @@ class TestSerch():
         print(x.text)
         assert x.status_code == 200
 
+    @pytest.mark.regression
     def test_api_invalid_login(self):
         url = "https://wetechsocial.herokuapp.com/auth/login"
         myobj = {"email": "d'", "password": "123456"}
@@ -17,6 +20,8 @@ class TestSerch():
         print(x.status_code)
         assert x.status_code == 500
 
+
+    @pytest.mark.regression
     def test_api_register(self):
         url = "https://wetechsocial.herokuapp.com/auth/register"
         myobj ={

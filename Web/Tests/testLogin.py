@@ -75,7 +75,7 @@ class TestLogin(Base):
         self.driver.implicitly_wait(10)
         login.validation(LoginLocators.pass_txtbox_name,"Please fill out this field.")
 
-
+    @pytest.mark.regression
     def test_daniel(self):
         driver = self.driver
         login = LoginPage(driver)
